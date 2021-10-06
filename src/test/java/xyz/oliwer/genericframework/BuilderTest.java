@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import xyz.oliwer.genericframework.builder.WrappableAbstractBuilder;
+import xyz.oliwer.genericframework.time.TimeFormatter;
 import xyz.oliwer.genericframework.util.Wrappable;
 
 import java.io.File;
@@ -52,6 +53,7 @@ public final class BuilderTest {
     }
 
     @Test void wrappable() throws IOException {
+        System.out.println(TimeFormatter.format(new TimeFormatter.Options(null, null, null), 284012568000L));
         final Path path = new WrappableFileBuilder()
             .withPath(getClass().getClassLoader().getResource("example_file.txt"))
             .withWrapper(new FileWrapper())
