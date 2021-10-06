@@ -25,7 +25,7 @@ public abstract class Watchable<Item> implements Supplier<Item> {
     }
 
     /**
-     * {@link List< Event>} list of all events to be triggered upon
+     * {@link List<Event>} list of all events to be triggered upon
      */
     private final List<Event<Item>> events = new LinkedList<>();
 

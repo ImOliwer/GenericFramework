@@ -1,5 +1,7 @@
 package xyz.oliwer.genericframework.event;
 
+import xyz.oliwer.genericframework.data.tuple.Tuple;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -100,5 +102,10 @@ final class SimpleEventRegistry implements EventRegistry {
             instance = new SimpleEventRegistry();
         }
         return instance;
+    }
+
+    // Attach default providers.
+    {
+        attachProvider(Tuple.Mutable.class);
     }
 }
