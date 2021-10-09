@@ -55,7 +55,7 @@ public final class BuilderTest {
     @Test void wrappable() throws IOException {
         System.out.println(TimeFormatter.format(new TimeFormatter.Options(null, null, null), 284012568000L));
         final Path path = new WrappableFileBuilder()
-            .withPath(getClass().getClassLoader().getResource("example_file.txt"))
+            .withPath(getClass().getClassLoader().getResource("example/document.txt"))
             .withWrapper(new FileWrapper())
             .buildAsPath();
         System.out.println(Files.readAllLines(path));
