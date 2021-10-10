@@ -1,4 +1,4 @@
-package xyz.oliwer.genericframework.data.storage;
+package xyz.oliwer.genericframework.data.module;
 
 import org.jetbrains.annotations.NotNull;
 import xyz.oliwer.genericframework.data.utilization.Loadable;
@@ -8,19 +8,19 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
 /**
- * This abstraction layer covers the <b>base structure</b> of every storage.
+ * This abstraction layer covers the <b>base structure</b> of every data module.
  *
  * @param <Source> type of source to load & save.
  * @param <By> type of object needed for referencing location of item etc.
  */
-public abstract class AbstractStorage<Source, By> implements Loadable<Source, By>, Savable<Source, By> {
+public abstract class AbstractDataModule<Source, By> implements Loadable<Source, By>, Savable<Source, By> {
     /** {@link Executor} this property holds the executor for asynchronous executions. **/
     protected final Executor executor;
 
     /**
      * @param executor {@link Executor} the executor used for asynchronous executions.
      */
-    protected AbstractStorage(Executor executor) {
+    protected AbstractDataModule(Executor executor) {
         this.executor = executor;
     }
 

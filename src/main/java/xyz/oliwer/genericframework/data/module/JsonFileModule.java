@@ -1,4 +1,4 @@
-package xyz.oliwer.genericframework.data.storage;
+package xyz.oliwer.genericframework.data.module;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -27,11 +27,11 @@ import static xyz.oliwer.genericframework.data.utilization.file.PathFetchVisitor
 import static xyz.oliwer.genericframework.util.Consumers.consumeAndTransform;
 
 /**
- * This class represents the "json" implementation of {@link AbstractStorage}.
+ * This class represents the "json" implementation of {@link AbstractDataModule}.
  *
  * @param <Source> the type of source to load & save.
  */
-public final class JsonFileStorage<Source> extends AbstractStorage<Source, Function<Path, Path>> {
+public final class JsonFileModule<Source> extends AbstractDataModule<Source, Function<Path, Path>> {
     /** {@link PrettyLogger} this logger is used widely throughout the functionality in this class, and only in this class. **/
     private static final PrettyLogger LOGGER = new PrettyLogger("JsonFileLoader", null);
 
@@ -51,7 +51,7 @@ public final class JsonFileStorage<Source> extends AbstractStorage<Source, Funct
      * Primary constructor.
      */
     @SafeVarargs
-    public JsonFileStorage(Class<Source> sourceClass, Path origin, boolean debug, Consumer<GsonBuilder>... gsonModifications) {
+    public JsonFileModule(Class<Source> sourceClass, Path origin, boolean debug, Consumer<GsonBuilder>... gsonModifications) {
         super(newSingleThreadExecutor(it -> new Thread(it, "JsonFileLoader")));
         if (!Files.isDirectory(origin))
             throw new RuntimeException("Origin must be directory");

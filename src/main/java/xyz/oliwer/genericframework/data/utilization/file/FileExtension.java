@@ -1,6 +1,7 @@
 package xyz.oliwer.genericframework.data.utilization.file;
 
 import org.jetbrains.annotations.NotNull;
+import xyz.oliwer.genericframework.data.module.JsonFileModule;
 
 import java.nio.file.Path;
 
@@ -16,7 +17,7 @@ import static java.util.Locale.ROOT;
  *   throw new RuntimeException("File must be '*'");
  * </pre>
  * Usage in action;
- * @see xyz.oliwer.genericframework.data.storage.JsonFileStorage
+ * @see JsonFileModule
  */
 public interface FileExtension {
     /**

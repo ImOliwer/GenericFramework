@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-import xyz.oliwer.genericframework.data.storage.JsonFileStorage;
+import xyz.oliwer.genericframework.data.module.JsonFileModule;
 import xyz.oliwer.genericframework.data.utilization.Loadable;
 
 import java.nio.file.Path;
@@ -29,7 +29,7 @@ public final class LoaderTest {
     }
 
     @Test void json_file() {
-        final Loadable<Property, Function<Path, Path>> propertyLoader = new JsonFileStorage<>(
+        final Loadable<Property, Function<Path, Path>> propertyLoader = new JsonFileModule<>(
             Property.class,
             Paths.get("G:\\Programming\\General\\GenericFramework\\src\\test\\resources\\example"),
             true,
